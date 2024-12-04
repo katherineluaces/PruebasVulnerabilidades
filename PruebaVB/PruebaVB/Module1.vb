@@ -10,10 +10,10 @@ Module Module1
 
     Sub Main()
         Try
-            ' Simula la entrada del parámetro "cvisor"
-            'Console.WriteLine("Introduce el valor del parámetro 'cvisor':")
-            Dim cVisor As String = "<Visor><UserId>12345</UserId><Pwd>password123</Pwd><ProyectoId>67890</ProyectoId><DocId>98765</DocId><Llave>ABCDEF123456</Llave><ProcesoId>ABCDEF123456</ProcesoId><PIID>ABCDEF123456</PIID><FlujoID>ABCDEF123456</FlujoID></Visor>"
-
+            '    Simula la entrada del parámetro "cvisor"
+            Console.WriteLine("Introduce el valor del parámetro 'cvisor':")
+            'Dim cVisor As String = "<Visor><UserId>12345</UserId><Pwd>password123</Pwd><ProyectoId>67890</ProyectoId><DocId>98765</DocId><Llave>ABCDEF123456</Llave><ProcesoId>ABCDEF123456</ProcesoId><PIID>ABCDEF123456</PIID><FlujoID>ABCDEF123456</FlujoID></Visor>"
+            Dim cvisor = Console.ReadLine()
             ' Validación inicial de cVisor
             If String.IsNullOrEmpty(cVisor) Then
                 Throw New Exception("El parámetro enviado está vacío. [cvisor] = " & cVisor)
@@ -74,17 +74,17 @@ Module Module1
 
             'If Not Directory.Exists(strXml) Then
             Using textReaderXML As TextReader = New StringReader(strXml) 'Ya se valido strXml por lo que es seguro cargarlo como texto y procesar el xml
-                    Dim xmlDoc As New XPathDocument(CType(textReaderXML, TextReader))
-                    Dim navigator As XPathNavigator = xmlDoc.CreateNavigator()
-                    Dim userId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/UserId")?.Value)
-                    Dim pwd As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/Pwd")?.Value)
-                    Dim proyId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/ProyectoId")?.Value)
-                    Dim docId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/DocId")?.Value)
-                    Dim llave As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/Llave")?.Value)
+                Dim xmlDoc As New XPathDocument(CType(textReaderXML, TextReader))
+                Dim navigator As XPathNavigator = xmlDoc.CreateNavigator()
+                Dim userId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/UserId")?.Value)
+                Dim pwd As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/Pwd")?.Value)
+                Dim proyId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/ProyectoId")?.Value)
+                Dim docId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/DocId")?.Value)
+                Dim llave As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/Llave")?.Value)
 
 
 
-                End Using
+            End Using
             'End If
         Catch ex As Exception
             Console.WriteLine("Error: " & ex.Message)
