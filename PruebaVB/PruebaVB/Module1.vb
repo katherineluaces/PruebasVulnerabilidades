@@ -72,8 +72,8 @@ Module Module1
             'xmlDoc.Load(strXml)
             'Dim d = "C:\Users\KatherineL\OneDrive - Digipro S.A. DE C.V\Documentos/.."
 
-            If Not Directory.Exists(strXml) Then
-                Using textReaderXML As TextReader = New StringReader(strXml) 'Ya se valido strXml por lo que es seguro cargarlo como texto y procesar el xml
+            'If Not Directory.Exists(strXml) Then
+            Using textReaderXML As TextReader = New StringReader(strXml) 'Ya se valido strXml por lo que es seguro cargarlo como texto y procesar el xml
                     Dim xmlDoc As New XPathDocument(CType(textReaderXML, TextReader))
                     Dim navigator As XPathNavigator = xmlDoc.CreateNavigator()
                     Dim userId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/UserId")?.Value)
@@ -85,7 +85,7 @@ Module Module1
 
 
                 End Using
-            End If
+            'End If
         Catch ex As Exception
             Console.WriteLine("Error: " & ex.Message)
 
