@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <!-- Elemento raíz -->
+    <xs:element name="Visor">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Definición de los elementos hijos -->
+                <xs:element name="UserId" type="xs:string" />
+                <xs:element name="Pwd" type="xs:string" />
+                <xs:element name="ProyectoId" type="xs:string" />
+                <xs:element name="DocId" type="xs:string" />
+                <xs:element name="Llave" type="xs:string" />
+				<xs:element name="ProcesoId" type="xs:string" />
+				<xs:element name="PIID" type="xs:string" />
+				<xs:element name="FlujoID" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

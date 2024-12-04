@@ -1,0 +1,12 @@
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\bin\Debug\PruebaVB.exe.config
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\bin\Debug\PruebaVB.exe
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\bin\Debug\PruebaVB.pdb
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\bin\Debug\PruebaVB.xml
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\obj\Debug\PruebaVB.vbproj.AssemblyReference.cache
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\obj\Debug\PruebaVB.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\obj\Debug\PruebaVB.Resources.resources
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\obj\Debug\PruebaVB.vbproj.GenerateResource.cache
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\obj\Debug\PruebaVB.vbproj.CoreCompileInputs.cache
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\obj\Debug\PruebaVB.exe
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\obj\Debug\PruebaVB.xml
+C:\Users\Rigo\Documents\Projects\TesteoVulnerabilidades\PruebaVB\PruebaVB\obj\Debug\PruebaVB.pdb
