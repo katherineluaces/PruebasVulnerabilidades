@@ -1,7 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
 Imports System.Security
+Imports System.Security.Policy
 Imports System.Text.RegularExpressions
+Imports System.Web
 Imports System.Xml
 Imports System.Xml.Schema
 Imports System.Xml.XPath
@@ -13,14 +15,18 @@ Module Module1
             '    Simula la entrada del parámetro "cvisor"
             Console.WriteLine("Introduce el valor del parámetro 'cvisor':")
             'Dim cVisor As String = "<Visor><UserId>12345</UserId><Pwd>password123</Pwd><ProyectoId>67890</ProyectoId><DocId>98765</DocId><Llave>ABCDEF123456</Llave><ProcesoId>ABCDEF123456</ProcesoId><PIID>ABCDEF123456</PIID><FlujoID>ABCDEF123456</FlujoID></Visor>"
-            Dim cvisor = Console.ReadLine()
-            ' Validación inicial de cVisor
-            If String.IsNullOrEmpty(cVisor) Then
-                Throw New Exception("El parámetro enviado está vacío. [cvisor] = " & cVisor)
-            End If
+            Dim url = Console.ReadLine()
+            Dim uri As New Uri(url)
+            Dim queryParams = HttpUtility.ParseQueryString(uri.Query)
+            Dim cvisor As String = queryParams("cvisor")
 
-            cVisor = cVisor.Replace(" ", "+")
-            Dim strXml As String = cVisor ' Simula la decodificación del parámetro
+
+            ' Validación inicial de cVisor
+            If String.IsNullOrEmpty(cvisor) Then
+                Throw New Exception("El parámetro enviado está vacío. [cvisor] = " & cvisor)
+            End If
+            cvisor = cvisor.Replace(" ", "+")
+            Dim strXml As String = cvisor ' Simula la decodificación del parámetro
 
             ' Validar que el XML sea seguro
             Dim patron As New Regex("(<script[^>]*>.*?</script>)|<!\[CDATA\[.*?\]\]>|&.*?;|<!--.*?-->", RegexOptions.IgnoreCase Or RegexOptions.Singleline)
@@ -76,7 +82,7 @@ Module Module1
             Using textReaderXML As TextReader = New StringReader(strXml) 'Ya se valido strXml por lo que es seguro cargarlo como texto y procesar el xml
                 Dim xmlDoc As New XPathDocument(CType(textReaderXML, TextReader))
                 Dim navigator As XPathNavigator = xmlDoc.CreateNavigator()
-                Dim userId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/UserId")?.Value)
+                Dim userId As String = SecurityElement.Escape(navigator.SelectSingleNode("UserId")?.Value)
                 Dim pwd As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/Pwd")?.Value)
                 Dim proyId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/ProyectoId")?.Value)
                 Dim docId As String = SecurityElement.Escape(navigator.SelectSingleNode("/Visor/DocId")?.Value)
